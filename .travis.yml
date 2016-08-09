@@ -1,0 +1,6 @@
+language: cpp
+compiler: gcc
+script: 
+  - ./build.sh
+  - ./travis_qmake_gcc_cpp98
+  - cd ..; sloccount --overhead 1 --personcost 22611 travis_qmake_gcc_cpp98_sloccount
