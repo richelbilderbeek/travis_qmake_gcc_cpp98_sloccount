@@ -1,11 +1,14 @@
 language: cpp
 compiler: gcc
-sudo: require
+sudo: required
 
 install:
+  # SLOCcount
   - sudo apt-get install sloccount
 
 script: 
-  - ./build.sh
+  - qmake
+  - make
   - ./travis_qmake_gcc_cpp98_sloccount
-  - cd ..; sloccount --overhead 1 --personcost 22611 travis_qmake_gcc_cpp98_sloccount
+  # SLOCcount
+  - cd ..; sloccount --overhead 1 --personcost 22611 travis_qmake_gcc_cpp98_sloccount; cd travis_qmake_gcc_cpp98_sloccount
